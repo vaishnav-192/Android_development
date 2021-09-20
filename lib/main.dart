@@ -6,6 +6,7 @@ import 'package:flutter_application_1/Pages/login_page.dart';
 import 'package:flutter_application_1/Pages/welcome_page.dart';
 import 'package:flutter_application_1/utils/routes.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_application_1/widgets/drawer.dart';
 
 void main(List<String> args) {
   runApp(MyApp());

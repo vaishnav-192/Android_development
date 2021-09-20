@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/utils/routes.dart';
+import 'package:flutter_application_1/widgets/drawer.dart';
 
 // ignore: camel_case_types
 class homepage extends StatelessWidget {
@@ -57,7 +58,7 @@ class homepage extends StatelessWidget {
           ),
         ),
       ),
-      drawer: Drawer(),
+      drawer: MyDrawer(),
     );
   }
 }
