@@ -14,8 +14,15 @@ class homepage extends StatelessWidget {
     String name = "Vaishnav";
     return Scaffold(
       appBar: AppBar(
-        title: Text("Catelog app"),
-      ),
+          title: SizedBox(
+        child: Center(
+          child: Text(
+            "Catelog App",
+            textAlign: TextAlign.justify,
+          ),
+        ),
+      )),
+      //or we can control all appbars through the main file. better look at that
       // body: Center(
       //   child: Container(
       //     child: Text("Welcome to $name's $days of android dev"),
@@ -26,7 +33,8 @@ class homepage extends StatelessWidget {
           child: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.symmetric(vertical: 50, horizontal: 50),
+                padding:
+                    const EdgeInsets.symmetric(vertical: 50, horizontal: 50),
                 child: Container(
                   child: Text(
                     "Welcome to $name's $days of android development",
@@ -43,16 +51,17 @@ class homepage extends StatelessWidget {
               //   height: 10,
               // ),
               Padding(
-                padding: const EdgeInsets.symmetric(vertical: 50, horizontal: 50),
+                padding:
+                    const EdgeInsets.symmetric(vertical: 50, horizontal: 50),
                 child: ElevatedButton(
-                      onPressed: () {
-                        Navigator.pushNamed(context, MyRoutes.loginRoute);
-                      },
-                      child: Text("Go to Login"),
-                      style: TextButton.styleFrom(
-                        minimumSize: Size(120, 40),
-                      ),
-                    ),
+                  onPressed: () {
+                    Navigator.pushNamed(context, MyRoutes.loginRoute);
+                  },
+                  child: Text("Go to Login"),
+                  style: TextButton.styleFrom(
+                    minimumSize: Size(120, 40),
+                  ),
+                ),
               ),
             ],
           ),
