@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, camel_case_types
+// ignore_for_file: prefer_const_constructors, camel_case_types, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/utils/routes.dart';
@@ -13,6 +13,7 @@ class login_page extends StatefulWidget {
 class _login_pageState extends State<login_page> {
   String name = "";
   bool changeButton = false;
+
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -50,11 +51,18 @@ class _login_pageState extends State<login_page> {
               // ),
             ),
             Text(
-              "This is login Page: $name",
+              "Welcome: $name",
               style: TextStyle(
                 fontSize: 20,
-                color: Colors.blueAccent,
+                color: Colors.blue,
                 fontWeight: FontWeight.bold,
+                // shadows: [
+                //   Shadow(
+                //     blurRadius: 8,
+                //     color: Colors.blueAccent,
+                //     offset: Offset(1, 1),
+                //   )
+                // ],
               ),
             ),
             SizedBox(
@@ -102,22 +110,28 @@ class _login_pageState extends State<login_page> {
                   // splashColor: Colors.white,
                   child: AnimatedContainer(
                     duration: Duration(seconds: 1),
-                    width: changeButton? 50 : 140,
+                    width: changeButton ? 50 : 140,
                     height: 50,
                     alignment: Alignment.center,
                     decoration: BoxDecoration(
                       //shape: changeButton? BoxShape.circle : BoxShape.rectangle,
-                      borderRadius: BorderRadius.circular(changeButton? 50 : 8),
+                      borderRadius:
+                          BorderRadius.circular(changeButton ? 50 : 8),
                       color: Colors.redAccent,
                     ),
-                    child: changeButton? Icon(Icons.done, color: Colors.white,) : Text(
-                      "LOGIN",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 15,
-                      ),
-                    ),
+                    child: changeButton
+                        ? Icon(
+                            Icons.done,
+                            color: Colors.white,
+                          )
+                        : Text(
+                            "LOGIN",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15,
+                            ),
+                          ),
                   ),
                 ),
               ]),
