@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors, unused_local_variable
+
 import 'dart:js';
 
 import 'package:flutter/material.dart';
@@ -5,7 +7,9 @@ import 'package:flutter_application_1/Pages/homepage.dart';
 import 'package:flutter_application_1/Pages/login_page.dart';
 import 'package:flutter_application_1/Pages/welcome_page.dart';
 import 'package:flutter_application_1/utils/routes.dart';
+import 'package:flutter_application_1/widgets/themes.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_application_1/widgets/drawer.dart';
 
 void main(List<String> args) {
   runApp(MyApp());
@@ -28,8 +32,16 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       //home: homepage(),
       themeMode: ThemeMode.light,
-      theme: ThemeData(
-          primarySwatch: Colors.red, fontFamily: GoogleFonts.lato().fontFamily),
+      // theme: ThemeData(
+      //     primarySwatch: Colors.red,
+      //     fontFamily: GoogleFonts.lato().fontFamily,
+      //     appBarTheme: AppBarTheme(
+      //         color: Colors.red,
+      //         elevation: 16,
+      //         iconTheme: IconThemeData(
+      //           color: Colors.white,
+      //         ))),
+      theme: MyTheme.lightTheme,
       darkTheme: ThemeData(brightness: Brightness.dark),
       initialRoute: MyRoutes.homeRoute,
       routes: {
