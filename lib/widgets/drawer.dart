@@ -3,6 +3,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:flutter_application_1/utils/routes.dart';
 
 class MyDrawer extends StatelessWidget {
   const MyDrawer({Key? key}) : super(key: key);
@@ -60,6 +61,20 @@ class MyDrawer extends StatelessWidget {
               leading: Icon(CupertinoIcons.mail_solid, color: Colors.white),
               title: Text(
                 "E-Mail",
+                textScaleFactor: 1.2,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            ListTile(
+              onTap: () {
+                Navigator.pushNamed(context, MyRoutes.loginRoute);
+              },
+              leading: Icon(CupertinoIcons.play_circle_fill, color: Colors.white),
+              title: Text(
+                "Login",
                 textScaleFactor: 1.2,
                 style: TextStyle(
                   color: Colors.white,

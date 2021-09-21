@@ -28,11 +28,13 @@ class homepage extends StatelessWidget {
         ),
       )),
       //or we can control all appbars through the main file. better look at that
+
       // body: Center(
       //   child: Container(
       //     child: Text("Welcome to $name's $days of android dev"),
       //   ),
       // ),
+
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: ListView.builder(
@@ -44,6 +46,7 @@ class homepage extends StatelessWidget {
           },
         ),
       ),
+
       // child: SingleChildScrollView(
       //   child: Column(
       //     children: [
@@ -61,12 +64,6 @@ class homepage extends StatelessWidget {
       //       //     ),
       //       //     //height: 40,
       //       //   ),
-      //       // ),
-      //       // ListView.builder(
-      //       //   itemCount: CatelogModel.iteams.length,
-      //       //   itemBuilder: (context, index){
-      //       //     return IteamWidget(iteam: CatelogModel.iteams[index],);
-      //       //   },
       //       // ),
       //       // SizedBox(
       //       //   height: 10,
