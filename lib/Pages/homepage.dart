@@ -14,7 +14,7 @@ class homepage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final dummyList = List.generate(5, (index) => CatelogModel.iteams[0]);
+    final dummyList = List.generate(20, (index) => CatelogModel.iteams[0]);
     int days = 30;
     String name = "Vaishnav";
     return Scaffold(
@@ -38,6 +38,7 @@ class homepage extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: ListView.builder(
+          physics: BouncingScrollPhysics(),
           itemCount: dummyList.length,
           itemBuilder: (context, index) {
             return IteamWidget(

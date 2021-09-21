@@ -12,7 +12,7 @@ class IteamWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      shape: StadiumBorder(),
+      //shape: StadiumBorder(),
       child: ListTile(
         onTap: () {
           print("${iteam.name} was pressed");
