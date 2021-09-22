@@ -1,6 +1,5 @@
 // ignore_for_file: prefer_const_constructors, unused_local_variable
 
-import 'dart:js';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Pages/homepage.dart';
