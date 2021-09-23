@@ -25,16 +25,20 @@ class _homepageState extends State<homepage> {
   }
 
   load_data() async {
+    await Future.delayed(Duration(seconds: 2));
     var catelogJson = await rootBundle.loadString("Assests/files/catelog.json");
     // print(catelogJson);
     var decodedData = jsonDecode(catelogJson);
     var productsData = decodedData["products"];
-    print(productsData);
+    //print(productsData);
+    CatelogModel.iteams = List.from(productsData)
+        .map<Iteam>((item) => Iteam.fromMap(item))
+        .toList();
+    setState(() {});
   }
 
   @override
   Widget build(BuildContext context) {
-    final dummyList = List.generate(20, (index) => CatelogModel.iteams[0]);
     int days = 30;
     String name = "Vaishnav";
     return Scaffold(
@@ -57,14 +61,16 @@ class _homepageState extends State<homepage> {
 
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: ListView.builder(
+        child: (CatelogModel.iteams !=null && CatelogModel.iteams.isNotEmpty)? ListView.builder(
           physics: BouncingScrollPhysics(),
-          itemCount: dummyList.length,
+          itemCount: CatelogModel.iteams.length,
           itemBuilder: (context, index) {
             return IteamWidget(
-              iteam: dummyList[index],
+              iteam: CatelogModel.iteams[index],
             );
           },
+        ): Center(
+          child: CircularProgressIndicator(),
         ),
       ),
 
