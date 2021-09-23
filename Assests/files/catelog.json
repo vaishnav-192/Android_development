@@ -1,0 +1,60 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Vivo V20",
+      "desc": "Nice Phone",
+      "price": 999,
+      "color": "#33505a",
+      "imageUrl": "Assests/Images/0.jpeg"
+    },
+    {
+      "id": 2,
+      "name": "Google pixel 4a",
+      "desc": "Nice Phone",
+      "price": 50999,
+      "color": "#33505a",
+      "imageUrl": "Assests/Images/1.jpeg"
+    },
+    {
+      "id": 3,
+      "name": "Motorola Edge 20 Fusion",
+      "desc": "Nice Phone",
+      "price": 21499,
+      "color": "#33505a",
+      "imageUrl": "Assests/Images/2.webp"
+    },
+    {
+      "id": 4,
+      "name": "OnePlus Nord CE 5G",
+      "desc": "Nice Phone",
+      "price": 25999,
+      "color": "#33505a",
+      "imageUrl": "Assests/Images/3.webp"
+    },
+    {
+      "id": 5,
+      "name": "Realme X7 Max",
+      "desc": "Nice Phone",
+      "price": 30000,
+      "color": "#33505a",
+      "imageUrl": "Assests/Images/4.webp"
+    },
+    {
+      "id": 6,
+      "name": "Samsung Galaxy F62",
+      "desc": "Nice Phone",
+      "price": 29599,
+      "color": "#33505a",
+      "imageUrl": "Assests/Images/5.webp"
+    },
+    {
+      "id": 7,
+      "name": "Xiaomi Mi 10i",
+      "desc": "Nice Phone",
+      "price": 27599,
+      "color": "#33505a",
+      "imageUrl": "Assests/Images/6.webp"
+    }
+  ]
+}

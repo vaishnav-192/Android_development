@@ -1,15 +1,36 @@
-// ignore_for_file: prefer_const_constructors
-
+// ignore_for_file: prefer_const_constructors, non_constant_identifier_names, camel_case_types, unused_local_variable
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_application_1/models/catelog.dart';
 import 'package:flutter_application_1/utils/routes.dart';
 import 'package:flutter_application_1/widgets/drawer.dart';
 import 'package:flutter_application_1/widgets/iteam_widget.dart';
+import 'dart:convert';
 
 // ignore: camel_case_types
-class homepage extends StatelessWidget {
+class homepage extends StatefulWidget {
   const homepage({Key? key}) : super(key: key);
+
+  @override
+  State<homepage> createState() => _homepageState();
+}
+
+class _homepageState extends State<homepage> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    load_data();
+  }
+
+  load_data() async {
+    var catelogJson = await rootBundle.loadString("Assests/files/catelog.json");
+    // print(catelogJson);
+    var decodedData = jsonDecode(catelogJson);
+    var productsData = decodedData["products"];
+    print(productsData);
+  }
 
   @override
   Widget build(BuildContext context) {
