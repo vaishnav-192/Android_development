@@ -61,17 +61,55 @@ class _homepageState extends State<homepage> {
 
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: (CatelogModel.iteams !=null && CatelogModel.iteams.isNotEmpty)? ListView.builder(
-          physics: BouncingScrollPhysics(),
-          itemCount: CatelogModel.iteams.length,
-          itemBuilder: (context, index) {
-            return IteamWidget(
-              iteam: CatelogModel.iteams[index],
-            );
-          },
-        ): Center(
-          child: CircularProgressIndicator(),
-        ),
+        child: (CatelogModel.iteams != null && CatelogModel.iteams.isNotEmpty)
+            ?
+            // ListView.builder(
+            //   physics: BouncingScrollPhysics(),
+            //   itemCount: CatelogModel.iteams.length,
+            //   itemBuilder: (context, index) {
+            //     return IteamWidget(
+            //       iteam: CatelogModel.iteams[index],
+            //     );
+            //   },
+            // )
+            GridView.builder(
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  mainAxisSpacing: 16,
+                  crossAxisSpacing: 16,
+                ),
+                itemBuilder: (context, index) {
+                  final item = CatelogModel.iteams[index];
+                  return Card(
+                    clipBehavior: Clip.antiAlias,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15)),
+                    child: GridTile(
+                      header: Container(
+                        child: Text(item.name),
+                        padding: const EdgeInsets.all(12),
+                        decoration: BoxDecoration(
+                          color: Colors.redAccent,
+                        ),
+                      ),
+                      child: Image.network(
+                        item.imageUrl,
+                      ),
+                      footer: Container(
+                        child: Text(item.price.toString()),
+                        padding: const EdgeInsets.all(12),
+                        decoration: BoxDecoration(
+                          color: Colors.lightBlue,
+                        ),
+                      ),
+                    ),
+                  );
+                },
+                itemCount: CatelogModel.iteams.length,
+              )
+            : Center(
+                child: CircularProgressIndicator(),
+              ),
       ),
 
       // child: SingleChildScrollView(
